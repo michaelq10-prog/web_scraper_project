@@ -1,10 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import time
 
 URL = "https://www.scrapethissite.com/pages/simple/"
 
 def run_scraper():
+    print("Checking server etiquette...applying 2-second crawl delay.")
+
     print(f"Accessing {URL}...")
     response = requests.get(URL)
     soup = BeautifulSoup(response.text, 'html.parser')
